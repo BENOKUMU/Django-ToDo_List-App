@@ -1,3 +1,12 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class="header-bar">
+    <div>
+        <h1>Hello {{request.user|title}} </h1>
+        <h3 style="margin: 0;">You have <i> {{count}} </i> incomplete task{{ count|pluralize:"s" }} </h3>
+    </div>
+</div>
 
 {% if request.user.is_authenticated %}
 <p>{{request.user}}</p>
@@ -33,3 +42,7 @@
     <h3>No Items in list</h3>
     {% endfor %}
 </table>
+
+{% endblock content %}
+
+
